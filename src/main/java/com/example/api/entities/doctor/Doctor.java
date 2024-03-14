@@ -1,13 +1,15 @@
-package com.example.api.doctor;
+package com.example.api.entities.doctor;
 
-import com.example.api.address.Address;
+import com.example.api.entities.address.Address;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity()
+import java.util.List;
+
+@Entity
 @Table(name = "doctors")
 @Getter
 @Setter
@@ -24,9 +26,6 @@ public class Doctor {
 
     @Enumerated(EnumType.STRING)
     private Specialty specialty;
-
-    @OneToOne(mappedBy = "doctor")
-    private Address address;
 
     public Doctor(DoctorRequestDTO doctorRequestDTO) {
         this.name = doctorRequestDTO.name();

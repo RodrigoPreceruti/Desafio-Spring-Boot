@@ -1,6 +1,8 @@
-package com.example.api.address;
+package com.example.api.entities.address;
 
+import com.example.api.entities.doctor.Doctor;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public record AddressRequestDTO(
         @NotBlank
@@ -14,5 +16,7 @@ public record AddressRequestDTO(
         @NotBlank
         String state,
         String complement,
-        String number) {
+        String number,
+        @NotNull
+        Doctor doctor) {
 }

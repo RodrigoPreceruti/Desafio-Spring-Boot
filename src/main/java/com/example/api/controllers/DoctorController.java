@@ -1,7 +1,7 @@
 package com.example.api.controllers;
 
-import com.example.api.doctor.DoctorRequestDTO;
-import com.example.api.doctor.DoctorResponseDTO;
+import com.example.api.entities.doctor.DoctorRequestDTO;
+import com.example.api.entities.doctor.DoctorResponseDTO;
 import com.example.api.services.DoctorService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +28,14 @@ public class DoctorController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<DoctorResponseDTO> findDoctorById(@PathVariable(name = "id") Long id) {
+    public ResponseEntity<DoctorResponseDTO> findDoctorById(@PathVariable Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(this.doctorService.findDoctorById(id));
     }
 
     @DeleteMapping("/{id}")
-    public void deleteDoctor(@PathVariable(name = "id") Long id) {
+    public ResponseEntity<?> deleteDoctor(@PathVariable Long id) {
         this.doctorService.deleteDoctor(id);
+
+        return ResponseEntity.noContent().build();
     }
 }

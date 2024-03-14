@@ -1,4 +1,4 @@
-package com.example.api.doctor;
+package com.example.api.entities.doctor;
 
 public enum Specialty {
     ORTHOPEDICS,

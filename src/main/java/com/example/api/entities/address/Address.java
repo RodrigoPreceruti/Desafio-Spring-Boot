@@ -1,6 +1,6 @@
-package com.example.api.address;
+package com.example.api.entities.address;
 
-import com.example.api.doctor.Doctor;
+import com.example.api.entities.doctor.Doctor;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,7 +25,7 @@ public class Address {
     private String state;
     private String number;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "doctor_id")
     private Doctor doctor;
 
@@ -36,5 +36,6 @@ public class Address {
         this.city = addressDTO.city();
         this.state = addressDTO.state();
         this.number = addressDTO.number();
+        this.doctor = addressDTO.doctor();
     }
 }

@@ -1,13 +1,10 @@
 package com.example.api.entities.doctor;
 
-import com.example.api.entities.address.Address;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.List;
 
 @Entity
 @Table(name = "doctors")
@@ -19,9 +16,13 @@ public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
+
     private String email;
+
     private String telephone;
+
     private String crm;
 
     @Enumerated(EnumType.STRING)

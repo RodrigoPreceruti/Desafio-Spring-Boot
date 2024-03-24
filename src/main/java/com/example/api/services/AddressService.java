@@ -3,6 +3,7 @@ package com.example.api.services;
 import com.example.api.entities.address.Address;
 import com.example.api.entities.address.AddressRequestDTO;
 import com.example.api.entities.address.AddressResponseDTO;
+import com.example.api.entities.doctor.Doctor;
 import com.example.api.repositories.AddressRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
